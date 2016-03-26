@@ -14,12 +14,13 @@
   },
   "homepage": "https://github.com/adamhenson/express-route-directory.git",
   "keywords": [
-    "s3",
-    "websockets",
-    "image",
-    "uploader",
-    "aws",
-    "resize"
+    "express",
+    "nodejs",
+    "routes",
+    "routing",
+    "router",
+    "directory",
+    "architecture"
   ],
   "license": "MIT",
   "main": "index.js",
