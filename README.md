@@ -1,6 +1,6 @@
 #Modulizer
 
-[![Build Status](https://api.travis-ci.org/adamhenson/modulizer.svg?branch=master)](https://api.travis-ci.org/adamhenson/modulizer.svg?branch=master)
+[![Build Status](https://api.travis-ci.org/adamhenson/modulizer.svg?branch=master)](https://travis-ci.org/adamhenson/modulizer)
 [![Coverage Status](https://coveralls.io/repos/github/adamhenson/modulizer/badge.svg?branch=master)](https://coveralls.io/github/adamhenson/modulizer?branch=master)
 
 > A Node.js package used to execute a group of modular code at once from files within a specified directory.
