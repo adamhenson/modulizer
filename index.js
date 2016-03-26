@@ -2,20 +2,21 @@
 
 const FS = require('fs');
 const INFO = require('./package');
-const MODULE_NAME = INFO.name;
+const PACKAGE_NAME = INFO.name;
 
-class ExpressRouteDirectory {
+class Modulizer {
 
   /**
-   * @param {string} directory - String path to routes directory. Required.
+   * @param {string} directory - String path to module directory. Required.
    * @param {object} options - Object for options. Optional.
    */
   constructor(directory, options) {
     if(!directory){
-      throw new Error(`${MODULE_NAME}: constructor(): "directory" argument is undefined.`);
+      throw new Error(`${PACKAGE_NAME}: constructor(): "directory" argument is undefined.`);
     }
     this._directory = directory;
     // default function arguments still unsupported :(
+    // so we can't do this constructor(directory, options = {})
     this._options = options || {};
   }
 
@@ -30,4 +31,4 @@ class ExpressRouteDirectory {
 
 }
 
-module.exports = ExpressRouteDirectory;
+module.exports = Modulizer;

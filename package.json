@@ -1,32 +1,33 @@
 {
-  "name": "express-route-directory",
-  "description": "A Node.js module to dynamically generate a route directory structure within Express apps.",
-  "version": "0.0.2",
+  "name": "modulizer",
+  "description": "A Node.js package used to execute a group of modular code at once from files within a specified directory.",
+  "version": "0.0.3",
   "author": {
     "name": "Adam Henson",
     "email": "adamhenson1979@gmail.com"
   },
   "bugs": {
-    "url": "https://github.com/adamhenson/express-route-directory/issues"
+    "url": "https://github.com/adamhenson/modulizer/issues"
   },
   "engines": {
     "node": ">= 4.4.1"
   },
-  "homepage": "https://github.com/adamhenson/express-route-directory.git",
+  "homepage": "https://github.com/adamhenson/modulizer.git",
   "keywords": [
-    "express",
-    "nodejs",
-    "routes",
-    "routing",
-    "router",
+    "modules",
     "directory",
     "architecture"
+    "node",
+    "express",
+    "routes",
+    "routing",
+    "router"
   ],
   "license": "MIT",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/adamhenson/express-route-directory.git"
+    "url": "https://github.com/adamhenson/modulizer.git"
   },
   "dependencies": {
   }
