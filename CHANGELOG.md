@@ -15,3 +15,7 @@
 ## 0.0.6
 
 - Badging.
+
+## 0.0.7
+
+- Test instantiation.
