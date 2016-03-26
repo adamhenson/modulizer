@@ -6,6 +6,10 @@ const MODULE_NAME = INFO.name;
 
 class ExpressRouteDirectory {
 
+  /**
+   * @param {string} directory - String path to routes directory. Required.
+   * @param {object} options - Object for options. Optional.
+   */
   constructor(directory, options) {
     if(!directory){
       throw new Error(`${MODULE_NAME}: constructor(): "directory" argument is undefined.`);
