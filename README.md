@@ -1,5 +1,7 @@
 #Modulizer
 
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coveralls Status][coveralls-image]][coveralls-url] [![Downloads][downloads-image]][npm-url]
+
 > A Node.js package used to execute a group of modular code at once from files within a specified directory.
 
 Allows a develepor to specify a directory in which each file represents a module or group of modules to be executed. Originally this was created to dynamically generate routes under frameworks with routing mechanisms like [Express](http://expressjs.com/). In this example use case - every route or set of routes can be encapsulated within its respective file. Option properties can be passed (such as `app`...or anything really) for use within modules.
