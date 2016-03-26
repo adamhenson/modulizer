@@ -1,7 +1,10 @@
 #Modulizer
 
+[![npm](https://img.shields.io/npm/v/modulizer.svg)]()
 [![Build Status](https://api.travis-ci.org/adamhenson/modulizer.svg?branch=master)](https://travis-ci.org/adamhenson/modulizer)
 [![Coverage Status](https://coveralls.io/repos/github/adamhenson/modulizer/badge.svg?branch=master)](https://coveralls.io/github/adamhenson/modulizer?branch=master)
+[![npm](https://img.shields.io/npm/dm/modulizer.svg)]()
+[![npm](https://img.shields.io/npm/dt/modulizer.svg)]()
 
 > A Node.js package used to execute a group of modular code at once from files within a specified directory.
 

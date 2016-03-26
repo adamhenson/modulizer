@@ -11,3 +11,7 @@
 ## 0.0.5
 
 - Testing: Mocha, Istanbul, Travis, Coverall.
+
+## 0.0.6
+
+- Badging.
