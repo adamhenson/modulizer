@@ -52,13 +52,13 @@ module.exports = function(options){
 
 ## Methods
 
-#### constructor
+#### constructor(directory, [options])
 
-Called upon instantiation.
+Called upon instantiation. This represents the [class constructor method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor).
 
 * @param {string} directory - String path to module directory. Required.
 * @param {object} options - Object for options. Optional.
 
-#### initialize
+#### initialize()
 
 Called to initialize execution of the modules.
