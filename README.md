@@ -17,6 +17,7 @@ $ npm i modulizer --save
 In this case, our modules are routes. For each file in our routes directory we have routing logic.
 
 ######/server.js
+
 ```javascript
 const EXPRESS = require('EXPRESS');
 const APP = EXPRESS();
@@ -30,18 +31,23 @@ let routes = new MODULIZER(__dirname + '/routes', {
 
 routes.initialize();
 ```
+`initialize()` will also return the number of files executed. So, if there were only one file - the following would log `1`. This would also exucute the same way as called above.
+
+```javascript
+let routeLength = routes.initialize();
+console.log(routeLength);
+```
 
 ######/routes/index.js
+
 ```javascript
 module.exports = function(options){
-
   let app = options.app;
   let config = options.config;
 
   app.get('/', function(req, res) {
     res.send('Hello, ' + config.name);
   });
-
 }
 ```
 
@@ -49,6 +55,7 @@ module.exports = function(options){
 
 - This package uses [ES2015](https://nodejs.org/en/docs/es6/), so Node.js v4.4.1+ is required.
 - Files within the specified directory need to have '.js' extensions. Other file types will be ignored.
+- Files within the specified directory need to export a function, otherwise it will be ignored.
 
 ## Methods
 
@@ -61,4 +68,4 @@ Called upon instantiation. This represents the [class constructor method](https:
 
 #### initialize()
 
-Called to initialize execution of the modules.
+Called to initialize execution of the modules. Will also return number of files executed.
