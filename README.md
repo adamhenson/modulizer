@@ -15,7 +15,7 @@ Modulizer accepts two arguments - the directory path, and an options object. It 
 ## Installation
 
 ```bash
-$ npm i modulizer --save
+$ npm install modulizer --save-dev
 ```
 
 ## Example Usage
