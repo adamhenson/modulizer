@@ -6,7 +6,9 @@ const MODULIZER = require('../');
 describe('new Modulizer()', function() {
 
   it('should instantiate without errors.', function() {
-    let modulizer = new MODULIZER(__dirname + '/files');
+    ASSERT.doesNotThrow(() => {
+      let modulizer = new MODULIZER(__dirname + '/files');
+    });
   });
 
 });
