@@ -7,3 +7,7 @@
 ## 0.0.4
 
 - Bugfix: Comma in package.json.
+
+## 0.0.5
+
+- Testing: Mocha, Istanbul, Travis, Coverall.
