@@ -1,0 +1,32 @@
+{
+  "name": "express-route-directory",
+  "description": "A Node.js module to dynamically generate a route directory structure within Express apps.",
+  "version": "0.0.13",
+  "author": {
+    "name": "Adam Henson",
+    "email": "adamhenson1979@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/adamhenson/express-route-directory/issues"
+  },
+  "engines": {
+    "node": ">= 4.4.1"
+  },
+  "homepage": "https://github.com/adamhenson/express-route-directory.git",
+  "keywords": [
+    "s3",
+    "websockets",
+    "image",
+    "uploader",
+    "aws",
+    "resize"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adamhenson/express-route-directory.git"
+  },
+  "dependencies": {
+  }
+}
