@@ -1,6 +1,6 @@
 {
   "name": "modulizer",
-  "description": "A Node.js package used to execute a group of modular code at once from files within a specified directory.",
+  "description": "A Node.js package used to bundle a group of files into a module object.",
   "version": "2.0.0",
   "author": {
     "name": "Adam Henson",
