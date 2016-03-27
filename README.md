@@ -27,7 +27,7 @@ In this case, our modules are routes. For each file in our routes directory we h
 ######/server.js
 
 ```javascript
-const EXPRESS = require('EXPRESS');
+const EXPRESS = require('express');
 const APP = EXPRESS();
 const MODULIZER = require('modulizer');
 const CONFIG = require('./config/main');
