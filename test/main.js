@@ -42,7 +42,7 @@ describe('Modulizer.methodArray', function() {
   let modulizer = new MODULIZER(__dirname + '/files');
 
   it('should equal 1 since only one JavaScript file with a function export exists.', function() {
-    ASSERT.equal(modulizer.methodArray.length, 1);;
+    ASSERT.equal(modulizer.methodArray.length, 1);
   });
 
 });
