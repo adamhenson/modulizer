@@ -80,11 +80,11 @@ Called upon instantiation. This represents the [class constructor method](https:
 * @param {string} directory - String path to module directory. Required.
 * @param {object} options - Object for options to be used for all modules. Optional.
 
-#### execute(moduleFunctionName [,options])
+#### execute(moduleName [,options])
 
-Execute a specific module identified by the file name (without ".js").
+Execute a specific module identified by the file name (without ".js")... the `moduleName` argument.
 
-* @param {string} moduleFunctionName - Name of module to be executed. The file name from where the code originated. Optional.
+* @param {string} moduleName - Name of module to be executed. The file name from where the code originated. Optional.
 * @param {object} options - Object to extend object for all modules uniquely. Optional.
 
 #### executeAll()

@@ -55,18 +55,18 @@ class Modulizer {
 
   /**
    * Execute a specific module identified by the file name (without ".js").
-   * @param {string} moduleFunctionName - Name of module to be executed. The file name from where
+   * @param {string} moduleName - Name of module to be executed. The file name from where
    *    the code originated. Optional.
    * @param {object} options - Object for options. Optional.
    */
-  execute(moduleFunctionName, options) {
+  execute(moduleName, options) {
     let self = this;
     let extendedOptions = Object.assign(self._options, options);
 
-    if(!this._methodObject[moduleFunctionName]) {
-      throw new Error(`${PACKAGE_NAME}: execute(): "${moduleFunctionName}" is undefined. Try logging "Modulizer.methodObject" to see all methods.`);
+    if(!this._methodObject[moduleName]) {
+      throw new Error(`${PACKAGE_NAME}: execute(): "${moduleName}" is undefined. Try logging "Modulizer.methodObject" to see all methods.`);
     } else {
-      this._methodObject[moduleFunctionName](options);
+      this._methodObject[moduleName](options);
     }
   }
 
