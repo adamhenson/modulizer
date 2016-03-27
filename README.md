@@ -6,11 +6,11 @@
 [![npm](https://img.shields.io/npm/dm/modulizer.svg)]()
 [![npm](https://img.shields.io/npm/dt/modulizer.svg)]()
 
-> A Node.js package used to execute a group of modular code at once from files within a specified directory.
-
-Allows a develepor to specify a directory in which each file represents a module or group of modules to be executed. Originally this was created to dynamically generate routes under frameworks with routing mechanisms like [Express](http://expressjs.com/). In this example use case - every route or set of routes can be encapsulated within its respective file. Option properties can be passed (such as `app`...or anything really) for use within modules.
-
-Modulizer accepts two arguments - the directory path, and an options object. It loops through the files which are each wrapped in a function, passing in the options object for use within each file. This is best for modules that simply execute code without returning values.
+> A Node.js package used to bundle a group of files into modules.
+>
+> *Modulizer is used to specify a directory of files to be executed (iteratively) in one batch, or to be used individually via `Modulizer.methodObject`.* Each file represents a module or group of modules. Originally this was created for a routing architecture under frameworks with like [Express](http://expressjs.com/), so that each route or set of routes would have their own file. Data can be passed into a wrapping function within each file via options.
+>
+> Modulizer accepts two arguments - the directory path, and an options object. Calling `Modulizer.executeAll` will loop through code from all files each wrapped in a function, passing in the options object. This is best for modules that execute code without returning values.
 
 ## Installation
 
@@ -35,13 +35,21 @@ let routes = new MODULIZER(__dirname + '/routes', {
   'CONFIG' : CONFIG
 });
 
-routes.initialize();
+routes.executeAll();
 ```
-`initialize()` will also return the number of files executed. So, if there were only one file - the following would log `1`. This would also exucute the same way as called above.
+
+Otherwise, if we only wanted to execute the code within `index.js`, we could do this:
 
 ```javascript
-let routeLength = routes.initialize();
-console.log(routeLength);
+routes.execute('index');
+```
+
+To take that even further, we could extend the `options` object uniquely for this module like so:
+
+```javascript
+routes.execute('index', {
+  'foo' : 'bar'
+});
 ```
 
 ######/routes/index.js
@@ -65,13 +73,28 @@ module.exports = function(options){
 
 ## Methods
 
-#### constructor(directory, [options])
+#### constructor(directory [,options])
 
 Called upon instantiation. This represents the [class constructor method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor).
 
 * @param {string} directory - String path to module directory. Required.
-* @param {object} options - Object for options. Optional.
+* @param {object} options - Object for options to be used for all modules. Optional.
 
-#### initialize()
+#### execute(moduleFunctionName [,options])
 
-Called to initialize execution of the modules. Will also return number of files executed.
+Execute a specific module identified by the file name (without ".js").
+
+* @param {string} moduleFunctionName - Name of module to be executed. The file name from where the code originated. Optional.
+* @param {object} options - Object to extend object for all modules uniquely. Optional.
+
+#### executeAll()
+
+Execute all modules.
+
+## Properties
+
+#### methodObject
+An object containing all module functions with keys of the pertaining file name (without ".js").
+
+#### methodArray
+An array containing all module functions.

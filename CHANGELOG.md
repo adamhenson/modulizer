@@ -19,3 +19,7 @@
 ## 0.0.7 - 1.0.0
 
 - Tests.
+
+## 2.0.0
+
+- Major revision. Indroducing new methods, replacing the old.

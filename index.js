@@ -15,30 +15,69 @@ class Modulizer {
       throw new Error(`${PACKAGE_NAME}: constructor(): "directory" argument is undefined.`);
     }
 
-    this._directory = directory;
-    // default function arguments still unsupported :(
-    // so we can't do this constructor(directory, options = {})
-    this._options = options || {};
-  }
-
-  initialize() {
     let self = this;
-    let fileLength = 0;
+    self._directory = directory;
+    self._options = options || {};
+    this._methodArray = [];
+    this._methodObject = {};
 
     FS.readdirSync(self._directory).forEach((file) => {
       if(file.indexOf('.js') !== -1) {
         let moduleFunction = require(self._directory + '/' + file);
 
         if(typeof moduleFunction !== 'function') {
-          console.log(`WARNING: ${PACKAGE_NAME}: initialize(): "${self._directory}/${file}" does not export a function. Execution of it has been skipped.`);
+          console.log(`WARNING: ${PACKAGE_NAME}: constructor(): "${self._directory}/${file}" does not export a function. Execution of it has been skipped.`);
         } else {
-          require(self._directory + '/' + file)(self._options);
-          fileLength++;
+          let filePathFragments = file.split('/');
+          let filePathFragmentsLength = filePathFragments.length;
+          let _id = (filePathFragments[filePathFragmentsLength - 1]).replace('.js', '');
+
+          this._methodObject[_id] = moduleFunction;
+          this._methodArray.push(moduleFunction);
         }
       }
     });
+  }
 
-    return fileLength;
+  /**
+   * Returns all methods as an object.
+   */
+  get methodObject() {
+    return this._methodObject;
+  }
+
+  /**
+   * Returns all methods as an array.
+   */
+  get methodArray() {
+    return this._methodArray;
+  }
+
+  /**
+   * Execute a specific module identified by the file name (without ".js").
+   * @param {string} moduleFunctionName - Name of module to be executed. The file name from where
+   *    the code originated. Optional.
+   * @param {object} options - Object for options. Optional.
+   */
+  execute(moduleFunctionName, options) {
+    let self = this;
+    let extendedOptions = Object.assign(self._options, options);
+
+    if(!this._methodObject[moduleFunctionName]) {
+      throw new Error(`${PACKAGE_NAME}: execute(): "${moduleFunctionName}" is undefined. Try logging "Modulizer.methodObject" to see all methods.`);
+    } else {
+      this._methodObject[moduleFunctionName](options);
+    }
+  }
+
+  /**
+   * Executes all modules.
+   */
+  executeAll() {
+    let self = this;
+    this._methodArray.forEach((moduleFunction) => {
+      moduleFunction(self._options);
+    });
   }
 
 }
