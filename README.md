@@ -49,9 +49,11 @@ routes.execute('index');
 To take that even further, we could extend the `options` object uniquely for this module like so:
 
 ```javascript
-routes.execute('index', {
-  'foo' : 'bar'
-});
+let moreOptions = {
+	'foo' : 'bar',
+	'hello' : 'world'
+}
+routes.execute('index', moreOptions);
 ```
 
 ######/routes/index.js

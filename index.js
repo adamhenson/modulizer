@@ -61,12 +61,13 @@ class Modulizer {
    */
   execute(moduleName, options) {
     let self = this;
-    let extendedOptions = Object.assign(self._options, options);
+    let _options = options || {};
+    let extendedOptions = Object.assign(self._options, _options);
 
     if(!this._methodObject[moduleName]) {
       throw new Error(`${PACKAGE_NAME}: execute(): "${moduleName}" is undefined. Try logging "Modulizer.methodObject" to see all methods.`);
     } else {
-      this._methodObject[moduleName](options);
+      this._methodObject[moduleName](extendedOptions);
     }
   }
 

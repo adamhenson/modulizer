@@ -23,3 +23,7 @@
 ## 2.0.0
 
 - Major revision. Indroducing new methods, replacing the old.
+
+## 2.0.3
+
+- Bugfix: Fixed execute(options) function so that original options were preserved and extended.
