@@ -69,7 +69,7 @@ module.exports = function(options){
 
 - This package uses [ES2015](https://nodejs.org/en/docs/es6/), so Node.js v4.4.1+ is required.
 - Files within the specified directory need to have '.js' extensions. Other file types will be ignored.
-- Files within the specified directory need to export a function, otherwise it will be ignored.
+- Files within the specified directory need to export a function, otherwise they will be ignored.
 
 ## Methods
 
