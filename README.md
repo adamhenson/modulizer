@@ -50,8 +50,8 @@ To take that even further, we could extend the `options` object uniquely for thi
 
 ```javascript
 let moreOptions = {
-	'foo' : 'bar',
-	'hello' : 'world'
+  'foo' : 'bar',
+  'hello' : 'world'
 }
 routes.execute('index', moreOptions);
 ```
