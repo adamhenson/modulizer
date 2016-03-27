@@ -8,7 +8,7 @@
 
 > A Node.js package used to bundle a group of files into module object.
 >
-> **Modulizer is used to specify a directory of files to be executed (iteratively) in one batch, or to be used individually via `Modulizer.methodObject`.** Each file represents a module or group of modules. Originally this was created for a routing architecture under frameworks with like [Express](http://expressjs.com/), so that each route or set of routes would have their own file. Data can be passed into a wrapping function within each file via options.
+> **Modulizer is used to specify a directory of files to be executed (iteratively) in one batch (`Modulizer.executeAll`), or to be used individually via `Modulizer.methodObject`.** Each file represents a module or group of modules. Originally this was created for a routing architecture under frameworks with like [Express](http://expressjs.com/), so that each route or set of routes would have their own file. Data can be passed into a wrapping function within each file via options.
 >
 > Modulizer accepts two arguments - the directory path, and an options object. Calling `Modulizer.executeAll` will loop through code from all files each wrapped in a function, passing in the options object. This is best for modules that execute code without returning values.
 
