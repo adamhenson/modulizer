@@ -1,6 +1,6 @@
 'use strict';
 
-const FS = require('fs');
+const fs = require('fs');
 const INFO = require('./package');
 const PACKAGE_NAME = INFO.name;
 
@@ -21,7 +21,7 @@ class Modulizer {
     this._methodArray = [];
     this._methodObject = {};
 
-    FS.readdirSync(self._directory).forEach((file) => {
+    fs.readdirSync(self._directory).forEach((file) => {
       if(file.indexOf('.js') !== -1) {
         let moduleFunction = require(self._directory + '/' + file);
 

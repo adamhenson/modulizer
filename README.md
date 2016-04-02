@@ -25,13 +25,13 @@ In this case, our modules are routes. For each file in our routes directory we h
 ######/server.js
 
 ```javascript
-const EXPRESS = require('express');
-const APP = EXPRESS();
-const MODULIZER = require('modulizer');
+const express = require('express');
+const app = express();
+const Modulizer = require('modulizer');
 const CONFIG = require('./config/main');
 
-let routes = new MODULIZER(__dirname + '/routes', {
-  'APP' : APP,
+let routes = new Modulizer(__dirname + '/routes', {
+  'app' : app,
   'CONFIG' : CONFIG
 });
 
@@ -59,10 +59,10 @@ routes.execute('index', moreOptions);
 ```javascript
 module.exports = function(options){
   let app = options.app;
-  let config = options.config;
+  const CONFIG = options.CONFIG;
 
   app.get('/', function(req, res) {
-    res.send('Hello, ' + config.name);
+    res.send('Hello, ' + CONFIG.name);
   });
 }
 ```
