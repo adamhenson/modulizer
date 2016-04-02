@@ -58,7 +58,7 @@ routes.execute('index', moreOptions);
 
 ```javascript
 module.exports = function(options){
-  let app = options.app;
+  const app = options.app;
   const CONFIG = options.CONFIG;
 
   app.get('/', function(req, res) {
